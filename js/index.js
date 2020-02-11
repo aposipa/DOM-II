@@ -50,5 +50,20 @@ document.querySelectorAll(".btn").forEach(btn =>{
     })
 })//10 event
 
-    
+//stop propagation
+const body = document.querySelector("body");
+body.addEventListener("click", () =>{
+    body.style.backgroundColor = "papayawhip";
+})
 
+const header = document.querySelector("header");
+header.addEventListener("click", () =>{
+    header.style.backgroundColor = "lightblue";
+    event.stopPropagation();
+})//end stop propagation nested
+
+//prevent default
+const stopLink = document.querySelector(".nav-link");
+stopLink.addEventListener("click", (event) =>{
+    event.preventDefault();
+})//end prevent default
